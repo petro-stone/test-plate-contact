@@ -56,11 +56,16 @@ nsle
 esurf,,reverse
 
 /solu
+allsel
 antype,0
+nlgeom,on
+nsubst,50,200,20
+outres,all,all
 solve
 
 /post1
 /view,1,1,0,0
 set,last
-/eshape,1
+/eshape,0
+/dscale,,1e2
 pldisp
