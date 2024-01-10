@@ -9,11 +9,12 @@ init
 aplot
 
 et,1,181
-stlplate,1,0.2,1
+stlplate,1,0.2,1 !,,250e6
 
 blc4,0,0,1,2
 wpoffs,,,0.25
 blc4,0,0,1,2
+areverse,2
 
 lsel,s,loc,y,0
 lsel,a,loc,y,2
@@ -28,7 +29,7 @@ dl,all,all,uy,0
 dl,all,all,uz,0
 
 asel,s,loc,z,0.25
-sfa,all,1,pres,-1e8
+sfa,all,1,pres,1e8
 
 allsel
 aesize,all,0.1
@@ -37,7 +38,6 @@ eplot
 
 *del,keyopts,,nopr
 *dim,keyopts,,11
-keyopts(5)=0
 keyopts(11)=1
 
 asel,s,area,,1
@@ -49,11 +49,11 @@ esel,inve
 nsel,inve
 cm,COMPE_contact,elem
 cm,COMPN_contact,node
-cntdef,'target','contact',170,174,1,,'keyopts'
+cntdef,'target','contact',170,174,0,0.3,'keyopts'
 
-cmsel,s,COMPE_contact_CONTA
-nsle
-esurf,,reverse
+! cmsel,s,COMPE_contact_CONTA
+! nsle
+! esurf,,reverse
 
 /solu
 allsel
