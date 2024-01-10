@@ -5,13 +5,14 @@ init
 /vup,all,y
 /view,1,1,1,1
 /auto,1
+/angle,1,0
 aplot
 
 et,1,181
 stlplate,1,0.2,1
 
 blc4,0,0,1,2
-wpoffs,,,0.2
+wpoffs,,,0.25
 blc4,0,0,1,2
 
 lsel,s,loc,y,0
@@ -21,11 +22,13 @@ dl,all,all,all,0
 
 lsel,s,loc,y,0
 lsel,a,loc,y,2
-lsel,r,loc,z,0.2
-dl,all,all,all,0
+lsel,r,loc,z,0.25
+dl,all,all,ux,0
+dl,all,all,uy,0
+dl,all,all,uz,0
 
-asel,s,loc,z,0.2
-sfa,all,1,pres,-1e4
+asel,s,loc,z,0.25
+sfa,all,1,pres,-1e8
 
 allsel
 aesize,all,0.1
