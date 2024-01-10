@@ -35,6 +35,26 @@ aesize,all,0.1
 amesh,all
 eplot
 
+*del,keyopts,,nopr
+*dim,keyopts,,11
+keyopts(5)=0
+keyopts(11)=1
+
+asel,s,area,,1
+esla
+nsle
+cm,COMPE_target,elem
+cm,COMPN_target,node
+esel,inve
+nsel,inve
+cm,COMPE_contact,elem
+cm,COMPN_contact,node
+cntdef,'target','contact',170,174,1,,'keyopts'
+
+cmsel,s,COMPE_contact_CONTA
+nsle
+esurf,,reverse
+
 /solu
 antype,0
 solve
