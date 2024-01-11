@@ -1,0 +1,67 @@
+init
+
+/prep7
+
+
+!!                                                                                                !!
+et,1,181
+stlplate,1,0.01,1 !,,250e6
+
+et,2,188
+sectype,2,beam,csolid
+secdata,0.01
+
+
+!!                                                                                                !!
+blc4 , 0    , 0    , 0.3  , 0.5
+cyl4 , 0.15 , 0.25 , 0.01
+
+asba,1,2,,delete,delete
+cm,compa_plate,area
+
+lsel,none
+k , 100 , 0.15 , 0.25 , -0.02
+k , 101 , 0.15 , 0.25 , 0.02
+l,100,101
+cm,compl_bolt,line
+
+
+!!                                                                                                !!
+allsel
+dk,100,all,0
+dk,101,all,0
+
+da,all,all,uz,0
+
+lsel,s,loc,y,0
+dl,all,all,uy,0.02
+
+
+!!                                                                                                !!
+cmsel,s,compa_plate
+aatt,1,,1,,1
+aesize,all,0.01
+amesh,all
+
+cmsel,s,compl_bolt
+latt,1,,2,,,,2
+lesize,all,0.01
+lmesh,all
+
+
+!!                                                                                                !!
+/solu
+allsel
+antype,0
+nlgeom,on
+nsubst,50,200,20
+outres,all,all
+solve
+
+/post1
+/view,1,0,0,1
+set,last
+/eshape,1
+/dscale,,1
+pldisp
+
