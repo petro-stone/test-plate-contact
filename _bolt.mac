@@ -25,21 +25,21 @@ lsel,u,loc,y,0.5
 cm,compl_hole,line
 
 lsel,none
-k , 100 , 0.15 , 0.25 , -0.02
-k , 101 , 0.15 , 0.25 , 0.02
+k , 100 , 0.15 , 0.25 , -0.05
+k , 101 , 0.15 , 0.25 , 0.05
 l,100,101
 cm,compl_bolt,line
 
 
 !!                                                                                                !!
 allsel
-dk,100,all,0
-dk,101,all,0
+dk,100,ux,0,,,uy,uz,rotz
+dk,101,ux,0,,,uy,uz,rotz
 
-da,all,all,uz,0
+da,all,uz,0
 
 lsel,s,loc,y,0
-dl,all,all,uy,0.02
+dl,all,all,uy,0.002
 
 
 !!                                                                                                !!
@@ -50,13 +50,14 @@ amesh,all
 
 cmsel,s,compl_bolt
 latt,1,,2,,,,2
-lesize,all,0.01
+lesize,all,0.001
 lmesh,all
 
 
 !!                                                                                                !!
 *del,keyopts,,nopr
 *dim,keyopts,,11
+keyopts(5)=3
 keyopts(11)=1
 
 cmsel,s,compl_bolt
@@ -69,7 +70,7 @@ nsll,s,1
 esln,s
 cm,COMPE_contact,elem
 cm,COMPN_contact,node
-cntdef,'target','contact',170,177,0,0,'keyopts'
+cntdef,'target','contact',170,175,0,1,'keyopts'
 
 
 !!                                                                                                !!
@@ -77,7 +78,7 @@ cntdef,'target','contact',170,177,0,0,'keyopts'
 allsel
 antype,0
 nlgeom,on
-nsubst,50,200,20
+nsubst,50
 outres,all,all
 solve
 
