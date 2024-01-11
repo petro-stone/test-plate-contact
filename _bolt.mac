@@ -55,6 +55,25 @@ lmesh,all
 
 
 !!                                                                                                !!
+*del,keyopts,,nopr
+*dim,keyopts,,11
+keyopts(5)=3
+keyopts(11)=1
+
+cmsel,s,compl_bolt
+esll,s
+nsle,s,active
+cm,COMPE_target,elem
+cm,COMPN_target,node
+cmsel,s,compl_hole
+nsll,s,1
+esln,s
+cm,COMPE_contact,elem
+cm,COMPN_contact,node
+cntdef,'target','contact',170,177,0,0,'keyopts'
+
+
+!!                                                                                                !!
 /solu
 allsel
 antype,0
