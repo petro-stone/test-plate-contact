@@ -18,6 +18,11 @@ cyl4 , 0.15 , 0.25 , 0.01
 
 asba,1,2,,delete,delete
 cm,compa_plate,area
+lsel,u,loc,x,0
+lsel,u,loc,x,0.3
+lsel,u,loc,y,0
+lsel,u,loc,y,0.5
+cm,compl_hole,line
 
 lsel,none
 k , 100 , 0.15 , 0.25 , -0.02
