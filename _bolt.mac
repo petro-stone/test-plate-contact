@@ -9,7 +9,7 @@ stlplate,1,0.01,1 !,,250e6
 
 et,2,188
 sectype,2,beam,csolid
-secdata,0.01
+secdata,0.009
 
 
 !!                                                                                                !!
@@ -39,13 +39,13 @@ dk,101,ux,0,,,uy,uz,rotz
 da,all,uz,0
 
 lsel,s,loc,y,0
-dl,all,all,uy,0.002
+dl,all,all,uy,0.005
 
 
 !!                                                                                                !!
 cmsel,s,compa_plate
 aatt,1,,1,,1
-aesize,all,0.01
+aesize,all,0.005
 amesh,all
 
 cmsel,s,compl_bolt
