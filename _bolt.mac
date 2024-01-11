@@ -40,6 +40,7 @@ da,all,uz,0
 
 lsel,s,loc,y,0
 dl,all,all,uy,0.005
+dl,all,all,ux,0
 
 
 !!                                                                                                !!
@@ -70,8 +71,20 @@ nsll,s,1
 esln,s
 cm,COMPE_contact,elem
 cm,COMPN_contact,node
-cntdef,'target','contact',170,175,0,1,'keyopts'
+cntdef,'target','contact',170,175,0,0,'keyopts'
 
+cmsel,s,compl_hole
+nsll,s,1
+esln,s
+nsle,s,active
+cm,COMPE_target,elem
+cm,COMPN_target,node
+cmsel,s,compl_bolt
+esll,s
+nsle,s,active
+cm,COMPE_contact,elem
+cm,COMPN_contact,node
+cntdef,'target','contact',170,175,0,0,'keyopts'
 
 !!                                                                                                !!
 /solu
